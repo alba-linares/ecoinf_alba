@@ -1,6 +1,6 @@
 ---
-title: "control_versiones_rmd"
-author: "albalinares"
+title: "Especies Exóticas Invasoras (¡documento reproducible!)"
+author: "Alba Linares"
 date: "2024-04-10"
 output: 
   word_document:
@@ -23,11 +23,11 @@ o plantas. Algunas de ellas son:
 
 ![](cotorra.jpg){width="480"}
 
-Cotorra argentina *Myiopsitta monachus*
+Cotorra argentina (*Myiopsitta monachus*)
 
 ![](vinagrera.jpg)
 
-Vinagrera *Oxalis pes-caprae*
+Vinagrera (*Oxalis pes-caprae*)
 
 ## Información complementaria
 
@@ -36,22 +36,26 @@ Para más información, se recomienda consultar el anexo del [Real Decreto
 agosto, por el que se regula el Catálogo español de especies exóticas
 invasoras.
 
-## Datos sobre las especies exóticas invasoras
+# Datos sobre las especies exóticas invasoras
 En cuanto a los grupos taxonómicos que actúan como EEI, estos son las proporciones:
 ```{r, echo=FALSE, message = FALSE}
 library(readxl)
 library(here)
 data<-read_xls(here("EEI.xls"),sheet = 1)
-pie(data$Total,labels = etiquetas_con_porcentajes,col = rainbow(n = 6,s = 0.4))
+
 porcentajes <- round(100 * data$Total / sum(data$Total), 1)
-etiquetas_con_porcentajes <- paste(data$Taxonomic_group, "\n", porcentajes, "%", sep = "")
+etiquetas_con_porcentajes <- paste(data$"Taxonomic group", "\n", porcentajes, "%", sep = "")
+
+pie(data$Total,labels = etiquetas_con_porcentajes,col = rainbow(n = 6,s = 0.4))
 
 # Mostrar las etiquetas con porcentajes en la gráfica
-legend("topright", legend = data$`Taxonomic group`, cex = 0.8, fill = rainbow(n = 6, s = 0.4), bty = "n")
+legend("bottom",inset = 1,legend = data$`Taxonomic group`, cex = 0.8, fill = rainbow(n = 6, s = 0.4), bty = "n")
 ```
+
+
 Y estos son los ambientes en los que habitan estas EEI:
 
-```{r, echo=FALSE, message = FALSE}
+```{r echo=FALSE, message=FALSE}
 library(readxl)
 library(here)
 
