@@ -1,1 +1,3 @@
 Pasos para hacer un control de versiones:
+1. Fijo un directorio
+cd "C:/Users/VE-UGR-0208/Desktop/CGD - Ecoinfo/Control de versiones"
