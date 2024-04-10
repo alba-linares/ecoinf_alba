@@ -1,1 +1,1 @@
-primer cambio
+Pasos para hacer un control de versiones:
