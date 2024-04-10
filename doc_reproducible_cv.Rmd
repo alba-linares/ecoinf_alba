@@ -3,25 +3,19 @@ title: "control_versiones_rmd"
 author: "albalinares"
 date: "2024-04-10"
 output: 
-  word_document
+  word_document:
+    toc: TRUE
+    toc_depth: 3
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
-
-Este documento tiene que tener:
-
-nivel básico: Una imagen Texto en negrita, cursiva Enlaces a diferentes
-webs Un trozo de código Un gráfico generado a partir de un trozo de
-código (el alumno tiene que importar el archivo de datos)
-
-nivel medio: una tabla procesada a partir de un código Referencias
-bibliográficas
-
-nivel experto: elementos interactivos (e.g. mapa)
+## Introducción
 
 Las **especies exóticas invasoras** (EEI) son aquellas que se introducen
 en un ecosistema por el ser humano. La mayoría de estas EEI son animales
@@ -34,6 +28,8 @@ Cotorra argentina *Myiopsitta monachus*
 ![](vinagrera.jpg)
 
 Vinagrera *Oxalis pes-caprae*
+
+# Información complementaria
 
 Para más información, se recomienda consultar el anexo del [Real Decreto
 630/2013](https://www.boe.es/eli/es/rd/2013/08/02/630/con), de 2 de
@@ -56,12 +52,10 @@ You can also embed plots, for example:
 plot(pressure)
 ```
 
-```{r}
-library(leaflet)
-library(readORG)
+\`\`\`{r} library(leaflet) library(readORG)
 
 # Código para crear un mapa interactivo
-data2<-read.csv(here("inaturalist.csv"))
-leaflet(data = data2) %>%
-  addTiles(data2) %>%
-  addMarkers(lng = ~longitude, lat = ~latitude, popup = ~scientific_name)
+
+data2\<-read.csv(here("inaturalist.csv")) leaflet(data = data2) %\>%
+addTiles(data2) %\>% addMarkers(lng = \~longitude, lat = \~latitude,
+popup = \~scientific_name)
