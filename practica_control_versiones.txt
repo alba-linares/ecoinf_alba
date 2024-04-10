@@ -1,8 +1,11 @@
 Pasos para hacer un control de versiones:
 1. Fijo un directorio
-cd "C:/Users/VE-UGR-0208/Desktop/CGD - Ecoinfo/Control de versiones"
+	cd "C:/Users/VE-UGR-0208/Desktop/CGD - Ecoinfo/Control de versiones"
 2. Inicializo un repositorio local
-git init ecoinf_alba
+	git init ecoinf_alba
 3. Fijo el repositorio como directorio
-cd "C:/Users/VE-UGR-0208/Desktop/CGD - Ecoinfo/Control de versiones/ecoinf_alba"
-
+	cd "C:/Users/VE-UGR-0208/Desktop/CGD - Ecoinfo/Control de versiones/ecoinf_alba"
+4. Lo uno al repositorio de GitHub
+	git remote add origin https://github.com/alba-linares/ecoinf_alba.git
+	git branch -M main
+	git push -u origin main
