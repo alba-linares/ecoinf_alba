@@ -3,4 +3,6 @@ Pasos para hacer un control de versiones:
 cd "C:/Users/VE-UGR-0208/Desktop/CGD - Ecoinfo/Control de versiones"
 2. Inicializo un repositorio local
 git init ecoinf_alba
+3. Fijo el repositorio como directorio
+cd "C:/Users/VE-UGR-0208/Desktop/CGD - Ecoinfo/Control de versiones/ecoinf_alba"
 
