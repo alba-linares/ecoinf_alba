@@ -65,11 +65,3 @@ EEI_environment <- EEI_environment[-5,] #Le quito los NA
 pie(EEI_environment$num_env,labels = EEI_environment$`Environment`,col = rainbow(n = 4,s = 0.4))
 
 ```
-
-\`\`\`{r} library(leaflet) library(readORG)
-
-# Código para crear un mapa interactivo
-
-data2\<-read.csv(here("inaturalist.csv")) leaflet(data = data2) %\>%
-addTiles(data2) %\>% addMarkers(lng = \~longitude, lat = \~latitude,
-popup = \~scientific_name)
