@@ -21,11 +21,11 @@ Las **especies exóticas invasoras** (EEI) son aquellas que se introducen
 en un ecosistema por el ser humano. La mayoría de estas EEI son animales
 o plantas. Algunas de ellas son:
 
-![](cotorra.jpg){width="480"}
+![](cotorra.jpg){height="150"}
 
 Cotorra argentina (*Myiopsitta monachus*)
 
-![](vinagrera.jpg)
+![](vinagrera.jpg){height="150"}
 
 Vinagrera (*Oxalis pes-caprae*)
 
@@ -55,7 +55,7 @@ legend("bottom",inset = 1,legend = data$`Taxonomic group`, cex = 0.8, fill = rai
 
 Y estos son los ambientes en los que habitan estas EEI:
 
-```{r echo=FALSE, message=FALSE}
+```{r echo=FALSE, message=FALSE, out.width=400}
 library(readxl)
 library(here)
 
