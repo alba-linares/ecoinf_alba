@@ -1,0 +1,67 @@
+---
+title: "control_versiones_rmd"
+author: "albalinares"
+date: "2024-04-10"
+output: 
+  word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+Este documento tiene que tener:
+
+nivel básico: Una imagen Texto en negrita, cursiva Enlaces a diferentes
+webs Un trozo de código Un gráfico generado a partir de un trozo de
+código (el alumno tiene que importar el archivo de datos)
+
+nivel medio: una tabla procesada a partir de un código Referencias
+bibliográficas
+
+nivel experto: elementos interactivos (e.g. mapa)
+
+Las **especies exóticas invasoras** (EEI) son aquellas que se introducen
+en un ecosistema por el ser humano. La mayoría de estas EEI son animales
+o plantas. Algunas de ellas son:
+
+![](cotorra.jpg){width="480"}
+
+Cotorra argentina *Myiopsitta monachus*
+
+![](vinagrera.jpg)
+
+Vinagrera *Oxalis pes-caprae*
+
+Para más información, se recomienda consultar el anexo del [Real Decreto
+630/2013](https://www.boe.es/eli/es/rd/2013/08/02/630/con), de 2 de
+agosto, por el que se regula el Catálogo español de especies exóticas
+invasoras.
+
+```{r cars}
+library(readxl)
+library(here)
+data<-read_xls(here("EEI.xls"),sheet = 1)
+pie(data$Total,labels = data$`Taxonomic group`,col = rainbow(n = 6,s = 0.4))
+
+```
+
+## ¿Cómo se analizan los datos?
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+```{r}
+library(leaflet)
+library(readORG)
+
+# Código para crear un mapa interactivo
+data2<-read.csv(here("inaturalist.csv"))
+leaflet(data = data2) %>%
+  addTiles(data2) %>%
+  addMarkers(lng = ~longitude, lat = ~latitude, popup = ~scientific_name)
