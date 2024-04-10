@@ -12,3 +12,5 @@ Pasos para hacer un control de versiones:
 5. Creo un archivo en el repositorio y le hago cambios, para después hacer diferentes commit con mensajes descriptivos
 	git add . (para añadir todo)
 	git commit -m "texto descriptivo"
+6. Actualizo el repositorio remoto
+	git push
